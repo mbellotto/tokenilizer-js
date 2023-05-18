@@ -1,0 +1,24 @@
+{
+    "C0": {
+        "id": "PS51-TKN",
+        "title": "Datos de Validación de la Transacción POS (OK)",
+        "format": {
+            "count": 10,
+            "length": 26,
+            "fields": [
+                "CVD-FLD",
+                "RESUB-STAT",
+                "RESUB-CNTR",
+                "TERM-POSTAL-CDE",
+                "E-COM-FLG",
+                "CMRCL-CRD-TYP",
+                "ADNL-DATA-IND",
+                "CVD-FLD-PRESENT",
+                "SAF-OR-FORCE-POST",
+                "AUTHN-COLL-IND",
+                "FRD-PRN-FLG",
+                "CAVV-AAV-RSLT-CDE"
+            ]
+        }
+    }
+}

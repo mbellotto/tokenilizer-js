@@ -1,0 +1,96 @@
+{
+    "CVD-FLD": {
+        "name": "CVD-FLD",
+        "Description": "",
+        "type": "X", 
+        "length": 4, 
+        "dafault": "    "
+    },
+    "RESUB-STAT": {
+        "name": "RESUB-STAT",
+        "Description": "",
+        "type": "X", 
+        "length": 1, 
+        "validValues": [" ", "S", "R", "A", "D", "T", "Q"], 
+        "dafault": " "
+    },
+    "RESUB-CNTR": {
+        "name": "RESUB-CNTR",
+        "Description": "",
+        "type": "X", 
+        "length": 3, 
+        "dafault": "   "
+    },
+    "TERM-POSTAL-CDE": {
+        "name": "TERM-POSTAL-CDE",
+        "Description": "",
+        "type": "X", 
+        "length": 10, 
+        "dafault": "          "
+    },
+    "E-COM-FLG": {
+        "name": "E-COM-FLG",
+        "Description": "",
+        "type": "X", 
+        "length": 1, 
+        "validValues": [" ", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "S", "T"], 
+        "dafault": " ",
+        "alt": "MOTO-FLG"
+    },
+    "CMRCL-CRD-TYP": {
+        "name": "CMRCL-CRD-TYP",
+        "Description": "",
+        "type": "X", 
+        "length": 1, 
+        "validValues": ["0", "B", "L", "R", "S", " "], 
+        "dafault": " "
+    },
+    "ADNL-DATA-IND": {
+        "name": "ADNL-DATA-IND",
+        "Description": "",
+        "type": "X", 
+        "length": 1, 
+        "dafault": " "
+    },
+    "CVD-FLD-PRESENT": {
+        "name": "CVD-FLD-PRESENT",
+        "Description": "",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3", "4", "9", " "], 
+        "dafault": " "
+    },
+    "SAF-OR-FORCE-POST": {
+        "name": "SAF-OR-FORCE-POST",
+        "Description": "",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": [" ", "S", "F", "0", "1"], 
+        "dafault": " ",
+        "alt": "MRCH-SRVC-RQST"
+    },
+    "AUTHN-COLL-IND": {
+        "name": "AUTHN-COLL-IND",
+        "Description": "",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3", "4", "5", "6", "7", "B", "F"],
+        "dafault": " "
+    },
+    "FRD-PRN-FLG": {
+        "name": "FRD-PRN-FLG",
+        "Description": "",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2"],
+        "dafault": "0"
+    },
+    "CAVV-AAV-RSLT-CDE": {
+        "name": "CAVV-AAV-RSLT-CDE",
+        "Description": "",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": [" ", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "M", "N", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+        "dafault": "0"
+    }
+}
