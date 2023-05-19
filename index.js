@@ -1,3 +1,7 @@
-import {findField, evalToken} from "./utils.js";
+import {findField, evalAdicData, evalTokenStructure, parseTokenData} from "./utils.js";
 
-evalToken( 'C0', 'abcdefghijklmnopqrstuvwxyz');
+const trama = '& 0000500156! 0400020 00000000032 ! C000026 C1429BEC        ! C400012 102510000660! R200046 01 01 R 10';
+
+// parseTokenData( 'C0', 'abcdefghijklmnopqrstuvwxyz');
+
+evalAdicData( trama );

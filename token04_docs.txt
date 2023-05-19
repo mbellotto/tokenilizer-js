@@ -1,0 +1,53 @@
+04 – PS50-TKN - Datos de Validación de la Transacción POS
+  
+ID:
+04	Nombre:
+PS50-TKN	Función:
+Validación de PIN y CVC	Largo:
+20 bytes	Conexión:
+RED/HOST	Prod:
+POS
+
+Campo	Formato	Descripción
+
+-------------
+ERR-FLG	X(01)	Información adicional sobre la validación de la tarjeta:
+Valores:
+"C"	= 	Error en la validación de CVC 
+"L"	=	Largo de PIN inválido
+"P"	=	Pin Block Inválido.
+"R"	=	Sanity Check Error
+"S"	=	Sanity Check Error
+"T"	=	Error en token
+" "	=	No se dispone de información.
+
+-------------
+RTE-GRP	X(11)	Routing Group para ruteo adquirente
+
+-------------
+CRD-VRFY-FLG	X(01)	Indica si se el CVC fue validado por el adquirente:C
+Valores:
+"C"	= 	CVC inválido/transacción continua
+"D" = 	CVC inválido/transacción rechazada
+"Y" = 	CVC válido
+"N" = 	CVC no validado/error en encriptor/ transacción continua
+"L" = 	CVC no validado/error en largo de tarjeta/ transacción continua	
+"J"	=	CVC no validado/error en largo de tarjeta/ transacción rechazada
+"O"	=	CVC no validado/comercio no envía CVC
+"P"	=	CVC no validado/tarjeta sin CVC
+"0"	=	CVC no validado/rechazo por otro motivo
+
+-------------
+CITY-EXT	X(05)	Extensión del campo Ciudad de la terminal
+
+-------------
+COMPLETE-TRACK2-DATA	X(01)	Indica si la terminal o adquirente tiene capacidad de transmitir completos el Track2 o track2.
+Valores
+"N" 	= 	No transmite
+"Y" 	= 	Transmite
+
+-------------
+UAF-FLG	X(01)	Indica si la tarjeta tiene registro de acumulados en el archivo UAF:
+Valores
+"0" 	= 	No 
+"1" 	= 	Si

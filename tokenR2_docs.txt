@@ -1,0 +1,95 @@
+R2 – CSM-POS-ICHG-TKN – Datos propios de la Operatoria POS para HOST (OK)
+
+ID:
+R2	Nombre:
+CSM-POS-ICHG-TKN	Función:
+Datos Propios de POS HOST	Largo:
+46 bytes	Conexión:
+RED/HOST	Prod:
+POS
+
+Campo	Formato	Descripción
+
+---------------------
+CANT-CUOTAS	X(02)	Cantidad de Cuotas. (Para Plan Ahora ver "Anexo P")
+
+---------------------
+ENTIDAD-EMISORA	X(04)	Nombre del emisor de la tarjeta.
+
+---------------------
+PLAN	X(01)	Plan de pago seleccionado por el usuario
+Valores posibles:
+"0" / "1" - Plan común
+"6" - Plan Ahora (ver "Anexo P")
+
+---------------------
+SITUACION-IVA	X(01)	Condición o Situación de inscripción de IVA del usuario.
+Default: " "
+Valores posibles:
+"0" - No Consumidor Final
+"1" - Consumidor Final 
+
+---------------------
+FOTO-FLAG	X(01)	Marca que indica si el plástico de la tarjeta lleva impreso la foto del usuario.
+Valores posibles:
+"F" - Con Foto
+" " - Sin Foto
+
+---------------------
+NRO-FACTURA	X(12)	Número de factura ingresado en la terminal POS. Para Uruguay tiene que seguir el siguiente formato: Además, debe coincidir con lo informado en el token P4
+
+---------------------
+TIPO-ID	X(01)	Tipo de número de identificación Ingresado:
+Valores posibles:
+"1" - DNI
+"2" - CUIT
+"3" - CUIL
+"4" - LE
+"5" - LC
+"6" - Pasporte
+
+---------------------
+NRO-ID	X(11)	Número de identificación del cliente. (Uso Futuro)
+
+---------------------
+TCC	X(01)	Ver “Anexo E”.
+
+---------------------
+TIPO-FINANCIACION	X(02)	Tipo de financiación del comercio
+Valores posibles :
+"20" - Issuer-financed ( Emisora )
+"21" - Merchant-financed
+"22" - Acquirer-financed
+"23" - Average payment ( Promedio )
+"24" - Consumer financing - Purchase ( Compra )
+"25" - Consumer financing - Cash Advance ( Adelanto )
+"26" - Government financing - Plan Ahora
+
+
+---------------------
+TRACK1-FLD	X(01)	Flag que indica si la terminal tiene capacidad de envío del track1.
+Default: "0"
+Valores posibles:
+ "1" - Tiene capacidad pero no pudo leerlo.
+
+---------------------
+SERVICE-CDE	X(03)	Service code informado en el track de la tarjeta
+
+---------------------
+B24-ORIG-PROC	X(02)	Es el código de transacción original de Base24, este dato se utiliza es para saber si fue algún tipo de operación de anulación cuando llega como devolución desde Mastercard.
+
+---------------------
+CF-FLAG-EMI  	X(01)	Flag del token CF que no está contemplado en la respuesta del campo 112 de BNET.
+
+---------------------
+CF-FLAG-SEG X(01)	Flag del token CF que no está contemplado en la respuesta del campo 112 de BNET.
+
+---------------------
+FLAG-RECHAZO-CAVV	X(01)	Valores posibles:
+"N" - Aprobada o rechazada por otro motivo
+"S" - Rechazada por CAVV
+
+---------------------
+USER-FLD	X(01)	Reservado para uso futuro
+
+ 

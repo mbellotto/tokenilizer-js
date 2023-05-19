@@ -1,0 +1,16 @@
+Q2 – CSM-NUEVOS-LIMITES-TKN – Disponibles de  de Tarjeta de Crédito (OK)
+
+ID:
+Q2	Nombre:
+CSM-NUEVOS-LIMITES-TKN	Función:
+Disponibles de tarjeta de crédito	Largo:
+40 bytes	Conexión:
+HOST	Prod:
+BASE
+
+Campo	Formato	Descripción
+LIM-ADELANTO-EFECTIVO	X(08)	Disponible para Adelanto de Efectivo
+LIM-CONTADO	X(08)	Disponible para Compra en Efectivo
+LIM-CUOTAS	X(08)	Disponible para Compra en Cuotas
+LIM-PREST-CONSUMO	X(08)	Disponible para Préstamo de Consumo
+LIM-PREST-FINANCIA	X(08)	Disponible para Préstamo de Financiación

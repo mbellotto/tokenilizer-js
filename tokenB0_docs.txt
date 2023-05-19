@@ -1,0 +1,35 @@
+B0 – SWI-TKN -  Datos Propios de Switch BNET
+  
+ID:
+B0/B1	Nombre:
+SWI-TKN	Función:
+Switch Token (B0 – Acquirer. B1 – Issuer)	Largo:
+88 bytes	Conexión:
+RED	Prod:
+BASE
+
+Campo	Formato	Descripción
+LGTH	X(03)	Largo de los datos infromados en el Token
+
+USER-FLD1	X(01)	Filler
+FIID	X(04)	Nombre del Switch:
+“BNET”
+VER-ID	X(02)	Número de Version:
+LOCAL-TIM              	9(06)	
+LOCAL-DAT                	9(04)	
+ADVICE-RSN-CDE           	9(03)	
+POS-ENTRY-MDE             	9(03)	
+RESP-CDE               	9(02)	
+CARD-VRFY-RESULT           	X(01)	
+VISA-XSTNG-DBT-IND        	X(01)	
+VISA-SVC-DVLPMT-IND    	X(01)	
+VISA-DEF-BILL-IND       	X(01)	
+PROC-CDE                   	X(06)	
+ON-BEHALF                  		occurs 2 times
+SVC                     	X(02)	
+RSLT-1                 	X(01)	
+MCHIP-PRO-IND              	X(02)	
+MCHIP-PROC-INFO  	X(01)	
+PAYPASS-MAPPED-PAN  	X(19)	
+PAYPASS-PAN    	X(19)	
+FILLER                     	X(01)	

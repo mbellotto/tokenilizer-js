@@ -92,5 +92,328 @@
         "length": 1 ,
         "validValues": [" ", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "M", "N", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
         "dafault": "0"
+    },
+    "ERR-FLG": {
+        "name": "ERR-FLG",
+        "Description": "Datos de Validación de la Transacción POS",
+        "type": "X", 
+        "length": 1,
+        "validValues": ["C", "L", "P", "R", "S", "T", " "],
+        "dafault": " "
+    },
+    "RTE-GRP": {
+        "name": "RTE-GRP",
+        "Description": "Routing Group para ruteo adquirente",
+        "type": "X", 
+        "length": 11,
+        "dafault": "           "
+    },
+    "CRD-VRFY-FLG": {
+        "name": "CRD-VRFY-FLG",
+        "Description": "Indica si se el CVC fue validado por el adquirente",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["C", "D", "Y", "N", "L", "J", "O", "P", "0"],
+        "dafault": "C"
+    },
+    "CITY-EXT": {
+        "name": "CITY-EXT",
+        "Description": "Extensión del campo Ciudad de la terminal",
+        "type": "X", 
+        "length": 5 ,
+        "dafault": "     "
+    },
+    "COMPLETE-TRACK2-DATA": {
+        "name": "COMPLETE-TRACK2-DATA",
+        "Description": "Indica si la terminal o adquirente tiene capacidad de transmitir completos el Track2 o track2.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["Y", "N"],
+        "dafault": "N"
+    },
+    "UAF-FLG": {
+        "name": "UAF-FLG",
+        "Description": "The Terminal attendance indicator indicates if the terminal is attended by the card acceptor.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1"],
+        "dafault": "0"
+    },
+    "TERM-ATTEND-IND": {
+        "name": "TERM-ATTEND-IND",
+        "Description": "",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2"],
+        "dafault": "0"
+    },
+    "TERM-OPER-IND": {
+        "name": "TERM-OPER-IND",
+        "Description": "The Terminal Operator Indicator is currently not being used.",
+        "type": "9", 
+        "length": 1 ,
+        "dafault": "0"
+    },
+    "TERM-LOC-IND": {
+        "name": "TERM-LOC-IND",
+        "Description": "The Terminal Location Indicator indicates the location of the terminal.",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3"],
+        "dafault": "0"
+    },
+    "CRDHLDR-PRESENT-IND": {
+        "name": "CRDHLDR-PRESENT-IND",
+        "Description": "The Cardholder Presence Indicator indicates whether the cardholder is present at the POS and explains the condition if the cardholder is not present.",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3", "4", "5"],
+        "dafault": "0"
+    },
+    "CRD-PRESENT-IND": {
+        "name": "CRD-PRESENT-IND",
+        "Description": "The Card Presence Indicator indicates if the card is present at the POS.",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1"],
+        "dafault": "0"
+    },
+    "CRD-CAPTR-IND": {
+        "name": "CRD-CAPTR-IND",
+        "Description": "The Card Capture Indicator indicates whether the terminal has card capture capabilities.",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1"],
+        "dafault": "0"
+    },
+    "TXN-STAT-IND": {
+        "name": "TXN-STAT-IND",
+        "Description": "The Transaction Status Indicator indicates the purpose or status of the request.",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3", "4", "5", "6", "7", "8"],
+        "dafault": "0"
+    },
+    "TXN-SEC-IND": {
+        "name": "TXN-SEC-IND",
+        "Description": "The Transaction Security Indicator indicates the card acceptor's security level.",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2"],
+        "dafault": "0"
+    },
+    "TXN-RTN-IND": {
+        "name": "TXN-RTN-IND",
+        "Description": "The Transaction Routing Indicator is currently not being used.",
+        "type": "9", 
+        "length": 1 ,
+        "dafault": "0"
+    },
+    "CRDHLDR-ACTVT-TERM-IND": {
+        "name": "CRDHLDR-ACTVT-TERM-IND",
+        "Description": "The Cardholder Activated Terminal Indicator indicates whether the cardholder activated the terminal with the use of the card and the CAT security level.",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3", "4", "5", "6", "7"],
+        "dafault": "0"
+    },
+    "TERM-INPUT-CAP-IND": {
+        "name": "TERM-INPUT-CAP-IND",
+        "Description": "The Card Data Terminal Input Capability Indicator indicates the terminal capabilities for transferring the data on the card into the terminal.",
+        "type": "9", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+        "dafault": "0"
+    },
+    "CRDHLDR-ID-METHOD": {
+        "name": "CRDHLDR-ID-METHOD",
+        "Description": "This field reflects how the cardholder was verified.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A"],
+        "dafault": "0"
+    },
+    "CANT-CUOTAS": {
+        "name": "CANT-CUOTAS",
+        "Description": "Cantidad de Cuotas. (Para Plan Ahora ver Anexo P)",
+        "type": "X", 
+        "length": 2 ,
+        "dafault": "  "
+    },
+    "ENTIDAD-EMISORA": {
+        "name": "ENTIDAD-EMISORA",
+        "Description": "Nombre del emisor de la tarjeta.",
+        "type": "X", 
+        "length": 4 ,
+        "dafault": "    "
+    },
+    "PLAN": {
+        "name": "PLAN",
+        "Description": "Plan de pago seleccionado por el usuario",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1", "6"],
+        "dafault": "0"
+    },
+    "SITUACION-IVA": {
+        "name": "SITUACION-IVA",
+        "Description": "Condición o Situación de inscripción de IVA del usuario.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1"],
+        "dafault": "0"
+    },
+    "FOTO-FLAG": {
+        "name": "FOTO-FLAG",
+        "Description": "Marca que indica si el plástico de la tarjeta lleva impreso la foto del usuario.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": [" ", "F"],
+        "dafault": " "
+    },
+    "NRO-FACTURA": {
+        "name": "NRO-FACTURA",
+        "Description": "Número de factura ingresado en la terminal POS. Para Uruguay tiene que seguir el siguiente formato: Además, debe coincidir con lo informado en el token P4",
+        "type": "X", 
+        "length": 12 ,
+        "dafault": "            "
+    },
+    "TIPO-ID": {
+        "name": "TIPO-ID",
+        "Description": "Tipo de número de identificación Ingresado:",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["1", "2", "3", "4", "5", "6"],
+        "dafault": "1"
+    },
+    "NRO-ID": {
+        "name": "NRO-ID",
+        "Description": "Número de identificación del cliente. (Uso Futuro)",
+        "type": "X", 
+        "length": 11 ,
+        "dafault": "           "
+    },
+    "TCC": {
+        "name": "TCC",
+        "Description": "Ver “Anexo E”.",
+        "type": "X", 
+        "length": 1 ,
+        "dafault": " "
+    },
+    "TIPO-FINANCIACION": {
+        "name": "TIPO-FINANCIACION",
+        "Description": "",
+        "type": "X", 
+        "length": 2 ,
+        "validValues": ["20", "21", "22", "23", "24", "25", "26"],
+        "dafault": "20"
+    },
+    "TRACK1-FLD": {
+        "name": "TRACK1-FLD",
+        "Description": "Flag que indica si la terminal tiene capacidad de envío del track1.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1"],
+        "dafault": "0"
+    },
+    "SERVICE-CDE": {
+        "name": "SERVICE-CDE",
+        "Description": "",
+        "type": "X", 
+        "length": 3 ,
+        "dafault": "   "
+    },
+    "B24-ORIG-PROC": {
+        "name": "B24-ORIG-PROC",
+        "Description": "Es el código de transacción original de Base24, este dato se utiliza es para saber si fue algún tipo de operación de anulación cuando llega como devolución desde Mastercard.",
+        "type": "X", 
+        "length": 2 ,
+        "dafault": "  "
+    },
+    "CF-FLAG-EMI": {
+        "name": "CF-FLAG-EMI",
+        "Description": "Flag del token CF que no está contemplado en la respuesta del campo 112 de BNET.",
+        "type": "X", 
+        "length": 1 ,
+        "dafault": " "
+    },
+    "CF-FLAG-SEG": {
+        "name": "CF-FLAG-SEG",
+        "Description": "Flag del token CF que no está contemplado en la respuesta del campo 112 de BNET.",
+        "type": "X", 
+        "length": 1 ,
+        "dafault": " "
+    },
+    "FLAG-RECHAZO-CAVV": {
+        "name": "FLAG-RECHAZO-CAVV",
+        "Description": "Rechazo CAVV",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1"],
+        "dafault": "0"
+    },
+    "USER-FLD": {
+        "name": "USER-FLD",
+        "Description": "",
+        "type": "X", 
+        "length": 1 ,
+        "dafault": " "
+    },
+    "LEN": {
+        "name": "LEN",
+        "Description": "Largo del mensaje",
+        "type": "X", 
+        "length": 3 ,
+        "dafault": "0"
+    },
+    "DATOS": {
+        "name": "DATOS",
+        "Description": "Mensaje",
+        "type": "X", 
+        "length": 199 ,
+        "dafault": ""
+    },
+    "LIM-ADELANTO-EFECTIVO": {
+        "name": "LIM-ADELANTO-EFECTIVO",
+        "Description": "Disponible para Adelanto de Efectivo",
+        "type": "X", 
+        "length": 8 ,
+        "dafault": "        "
+    },
+    "LIM-CONTADO": {
+        "name": "LIM-CONTADO",
+        "Description": "Disponible para Compra en Efectivo",
+        "type": "X", 
+        "length": 8 ,
+        "dafault": "        "
+    },
+    "LIM-CUOTAS": {
+        "name": "LIM-CUOTAS",
+        "Description": "Disponible para Compra en Cuotas",
+        "type": "X", 
+        "length": 8 ,
+        "dafault": "        "
+    },
+    "LIM-PREST-CONSUMO": {
+        "name": "LIM-PREST-CONSUMO",
+        "Description": "Disponible para Préstamo de Consumo",
+        "type": "X", 
+        "length": 8 ,
+        "dafault": "        "
+    },
+    "LIM-PREST-FINANCIA": {
+        "name": "LIM-PREST-FINANCIA",
+        "Description": "Disponible para Préstamo de Financiación",
+        "type": "X", 
+        "length": 8 ,
+        "dafault": "        "
+    },
+    "Comment": {
+        "name": "Comment",
+        "Description": "",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1"],
+        "dafault": "0"
     }
 }

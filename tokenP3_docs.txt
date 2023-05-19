@@ -1,0 +1,13 @@
+P3 – CSM-PRNT-TKN – Mensajes Especiales a Imprimir en el Ticket POS(OK)
+  
+ID:
+P3	Nombre:
+CSM-PRNT-TKN	Función:
+Mensajes especiales en tickets	Largo:
+202 bytes	Conexión:
+HOST/RED	Prod:
+POS
+
+Campo	Formato	Descripción
+LEN		X(03)	Largo del mensaje
+DATOS	X(199)	Mensaje 

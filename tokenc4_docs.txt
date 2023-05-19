@@ -1,0 +1,125 @@
+C4 – PT-SRV-DATA-TKN – Point of Service Data Token (OK)
+  
+ID:
+C4	Nombre:
+PT-SRV-DATA-TKN	Función:
+Datos de ingreso de la operación	Largo:
+12 bytes	Conexión:
+RED/HOST	Prod:
+POS
+
+Campo	Formato	Descripción
+
+--------
+TERM-ATTEND-IND	9(1)	The Terminal attendance indicator indicates if the terminal is attended by the card acceptor.
+
+Valid values are:
+"0" - Attended terminal
+"1" - Unattended terminal (cardholder-activated terminal [CAT], home PC)
+"2" - No terminal used (voice/ARU authorization)
+
+--------
+TERM-OPER-IND	9(1)	The Terminal Operator Indicator is currently not being used.
+
+--------
+TERM-LOC-IND	9(1)	The Terminal Location Indicator indicates the location of the terminal.
+
+Valid values are:
+"0" - On premises of card acceptor facility
+"1" - Off premises of card acceptor facility (Merchant terminal--remote location)
+"2" - On premises of cardholder (home PC)
+"3" - No terminal used (voice/ARU authorization)
+
+--------
+CRDHLDR-PRESENT-IND	9(1)	The Cardholder Presence Indicator indicates whether the cardholder is present at the POS and explains the condition if the cardholder is not present.
+
+Valid values are:
+"0" - Cardholder present
+"1" - Cardholder not present, unspecified
+"2" - Cardholder not present, mail/facsimile order
+"3" - Cardholder not present, telephone/ARU order
+"4" - Cardholder not present, standing order/recurring transaction
+"5" - Electronic order (home PC, Internet)
+
+--------
+CRD-PRESENT-IND	9(1)	The Card Presence Indicator indicates if the card is present at the POS.
+
+Valid values are:
+"0" - Card present
+"1" - Card not present
+
+--------
+CRD-CAPTR-IND	9(1)	The Card Capture Indicator indicates whether the terminal has card capture capabilities.
+
+Valid values are:
+"0" - Has no card capture capability
+"1" - Has card capture capability
+
+--------
+TXN-STAT-IND	9(1)	The Transaction Status Indicator indicates the purpose or status of the request.
+
+Valid values are:
+"0" = Normal request ( original presentment )
+"1" = Deferred authorization
+"2" = Secure phone order
+"3" = Installment inquiry request
+"4" = Pre-authorized request
+"5" = Stand-in
+"6" = Address verification request: verify shipping addr.
+"7" = Cash back
+"8" = Downtime submission request
+
+--------
+TXN-SEC-IND	9(1)	The Transaction Security Indicator indicates the card acceptor's security level.
+
+Valid values are:
+"0" = No security concern
+"1" = Suspected fraud (merchant suspicious - code 10)
+"2" = Identification verified
+
+--------
+TXN-RTN-IND	9(1)	The Transaction Routing Indicator is currently not being used.
+
+--------
+CRDHLDR-ACTVT-TERM-IND	9(1)	The Cardholder Activated Terminal Indicator indicates whether the cardholder activated the terminal with the use of the card and the CAT security level.
+
+Valid values are:
+"0" = Not a CAT transaction
+"1" = Automated dispensing machine with PIN/level 1
+"2" = Self-service terminal/level 2, contactless proximity terminal
+"3" = Limited amount terminal/level 3
+"4" = In-flight commerce/level 4
+"5" = Script device
+"6" = Electronic commerce
+"7" = Radio frequency device
+
+--------
+TERM-INPUT-CAP-IND	9(1)	The Card Data Terminal Input Capability Indicator indicates the terminal capabilities for transferring the data on the card into the terminal.
+
+Valid values are:
+"0" - Unknown or unspecified
+"1" - No terminal used (voice/ARU authorization)
+"2" - Magnetic stripe reader
+"3" - Contactless chip (EMV); contactless mag stripe reader and/or one or more contact readers may also be present
+"4" - Contactless mag stripe; one or more contact readers may also be present
+"5" - Magnetic stripe reader and EMV compatible ICC reader
+"6" - Key entry only
+"7" - Magnetic stripe reader and key entry
+"8" - Magnetic stripe reader, key entry, and EMV compatible ICC reader
+"9" - EMV compatible ICC reader
+
+--------
+CRDHLDR-ID-METHOD	9(1)	This field reflects how the cardholder was verified.
+
+Valid Values are:  
+"0" - Unknown (default)
+"1" - Signature
+"2" - PIN
+"3" - None (Cardholder Present)
+"4" - None (Cardholder Not Present)
+"5" - Authentication Value
+"6" - Electronic Signature Analysis
+"7" - Biometrics
+"8" - Biographics
+"9" - Other
+"A" - Cardholder ID Method Identified by cardholder device

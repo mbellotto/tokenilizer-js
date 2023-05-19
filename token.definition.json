@@ -20,5 +20,101 @@
                 "CAVV-AAV-RSLT-CDE"
             ]
         }
+    },
+    "04": {
+        "id": "PS50-TKN",
+        "title": "Datos de Validación de la Transacción POS",
+        "format": {
+            "count": 6,
+            "length": 20,
+            "fields": [
+                "ERR-FLG",
+                "RTE-GRP",
+                "CRD-VRFY-FLG",
+                "CITY-EXT",
+                "COMPLETE-TRACK2-DATA",
+                "UAF-FLG"
+            ]
+        }
+    },
+    "C4": {
+        "id": "PT-SRV-DATA-TKN",
+        "title": "Point of Service Data Token (OK). Datos de ingreso de la operación",
+        "format": {
+            "count": 12,
+            "length": 12,
+            "fields": [
+                "TERM-ATTEND-IND",
+                "TERM-OPER-IND",
+                "TERM-LOC-IND",
+                "CRDHLDR-PRESENT-IND",
+                "CRD-PRESENT-IND",
+                "CRD-CAPTR-IND",
+                "TXN-STAT-IND",
+                "TXN-SEC-IND",
+                "TXN-RTN-IND",
+                "CRDHLDR-ACTVT-TERM-IND",
+                "TERM-INPUT-CAP-IND",
+                "CRDHLDR-ID-METHOD"
+            ]
+        }
+    },
+    "R2": {
+        "id": "CSM-POS-ICHG-TKN",
+        "title": "Datos propios de la Operatoria POS para HOST (OK)",
+        "format": {
+            "count": 17,
+            "length": 46,
+            "fields": [
+                "CANT-CUOTAS",
+                "ENTIDAD-EMISORA",
+                "PLAN",
+                "SITUACION-IVA",
+                "FOTO-FLAG",
+                "NRO-FACTURA",
+                "TIPO-ID",
+                "NRO-ID",
+                "TCC",
+                "TIPO-FINANCIACION",
+                "TRACK1-FLD",
+                "SERVICE-CDE",
+                "B24-ORIG-PROC",
+                "CF-FLAG-EMI",
+                "CF-FLAG-SEG",
+                "FLAG-RECHAZO-CAVV",
+                "USER-FLD"
+            ]
+        }
+    },
+    "P3": {
+        "id": "CSM-PRNT-TKN",
+        "title": "Mensajes Especiales a Imprimir en el Ticket POS(OK)",
+        "funcion": "Mensajes especiales en tickets",
+        "format": {
+            "count": 2,
+            "length": 202,
+            "fields": [
+                "LEN",
+                "DATOS"
+            ]
+        }
+    },
+    "Q2": {
+        "id": "CSM-NUEVOS-LIMITES-TKN",
+        "title": "Disponibles de  de Tarjeta de Crédito (OK)",
+        "funcion": "Disponibles de tarjeta de crédito",
+        "format": {
+            "count": 5,
+            "length": 40,
+            "fields": [
+                "LIM-ADELANTO-EFECTIVO",
+                "LIM-CONTADO",
+                "LIM-CUOTAS",
+                "LIM-PREST-CONSUMO",
+                "LIM-PREST-FINANCIA"
+            ]
+        }
     }
 }
+
+
