@@ -5,45 +5,29 @@ export function findField( fieldId ) {
     return fieldsDef[ fieldId ];
 }
 
-export function parseTokenData (id, value) {
+export function parseTokenData (def, value) {
     if ( !value ) {
         console.log(`No value was provided`);
         return false;
     }
-    if ( format[id] ) {
+
+    let pos = 0;
+    def.fields.forEach( fldId => {
+        const fld = fieldsDef[fldId];
+        const step = fld.length;
+        const fieldValue = value.substring( pos, pos+step);
         
-        const def = format[id].format;
-        
-        const diff = def.length - value.length;
-        
-        console.log(`Token ${id} - ${format[id].title}`);
-        
-        if ( diff ) {
-            console.log(`Value length is ${diff > 0 ? 'shorter': 'larger'} than expected. Expected length = ${def.length}, received = ${value.length}`);
-            return false;
+        let idx = 0
+        if (fld.validValues) {
+            idx = fld.validValues.indexOf(fieldValue);
         }
-        
-        let pos = 0;
-        def.fields.forEach( fldId => {
-            const fld = fieldsDef[fldId];
-            const step = fld.length;
-            const fieldValue = value.substring( pos, pos+step);
-            
-            let idx = 0
-            if (fld.validValues) {
-                idx = fld.validValues.indexOf(fieldValue);
-            }
 
-            console.log(`   ${fld.name} = [${fieldValue}]  [ ${idx === -1 ? 'INAVLID' : 'VALID'} ]`);
+        console.log(`   ${fld.name} = [${fieldValue}]  [ ${idx === -1 ? 'INAVLID' : 'VALID'} ]`);
 
-            pos = pos + step;
-        })
-        return true;
-        
-    } else {
-        console.log(`No definition was found for token with id=${id}`);
-        return false;
-    }
+        pos = pos + step;
+    })
+    
+    return true;
 }
 
 export function evalTokenStructure( token ) {
@@ -74,9 +58,29 @@ export function evalTokenStructure( token ) {
         return false;
     }
 
-    const data = token.substring(10);
+    if ( format[header.id] ) {
+        
+        const value = token.substring(10);
+        
+        const def = format[header.id].format;
+        
+        const diff = def.length - value.length;
+        
+        console.log(`Token ${header.id} - ${format[header.id].title}`);
+        console.log('------------------------------------------------------------------------------');
+        
+        if ( diff ) {
+            console.log(`Value length is ${diff > 0 ? 'shorter': 'larger'} than expected. Expected length = ${def.length}, received = ${value.length}`);
+            return false;
+        }
+        
+        parseTokenData( def, value );
+        console.log('------------------------------------------------------------------------------\n');
 
-    parseTokenData( header.id, data );
+    } else {
+        console.log(`No definition was found for token with id=${header.id}\n`);
+        return false;
+    }
 }
 
 export function evalAdicData( adicData ) {
@@ -116,13 +120,14 @@ export function evalAdicData( adicData ) {
         return false;
     } 
     
-    console.log(`${tokens.length} were found`);
+    console.log(`${tokens.length} token${tokens.length===1 ? ' was' :'s were'} found\n`);
 
-    tokens.forEach( tkn => {
+    for (let idx = 1; idx < tokens.length; idx++) {
+        const tkn = tokens[idx];
+
         console.log(`Processing token: [!${tkn}]`);
 
         evalTokenStructure( `!${tkn}` );
-    });
-
+    }
 
 }
