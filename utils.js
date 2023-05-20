@@ -8,12 +8,18 @@ export function findField( fieldId ) {
 export function parseTokenData (def, value) {
     if ( !value ) {
         console.log(`No value was provided`);
-        return false;
+        return null;
     }
 
     let pos = 0;
+    let observed = [];
+
     def.fields.forEach( fldId => {
         const fld = fieldsDef[fldId];
+        if ( !fld ) {
+            console.log(`Bad field definition [${fldId}]`);
+            throw 'Bad field definition';
+        }
         const step = fld.length;
         const fieldValue = value.substring( pos, pos+step);
         
@@ -24,10 +30,14 @@ export function parseTokenData (def, value) {
 
         console.log(`   ${fld.name} = [${fieldValue}]  [ ${idx === -1 ? 'INAVLID' : 'VALID'} ]`);
 
+        if ( idx === -1 ) {
+            observed.push(fld.name);
+        }
+
         pos = pos + step;
     })
     
-    return true;
+    return observed;
 }
 
 export function evalTokenStructure( token ) {
@@ -74,7 +84,9 @@ export function evalTokenStructure( token ) {
             return false;
         }
         
-        parseTokenData( def, value );
+        const observed = parseTokenData( def, value );
+        console.log('------------------------------------------------------------------------------\n');
+        console.log(`Observed fields: ${observed.join(', ')}`);
         console.log('------------------------------------------------------------------------------\n');
 
     } else {

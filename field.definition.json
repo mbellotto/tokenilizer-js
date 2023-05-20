@@ -408,6 +408,315 @@
         "length": 8 ,
         "dafault": "        "
     },
+    "ALGO-IMPACTO-SALDO": {
+        "name": "ALGO-IMPACTO-SALDO",
+        "Description": "Número de algoritmo de cálculo de impacto de saldo",
+        "type": "X", 
+        "length": 2 ,
+        "dafault": "00"
+    },
+    "ALGO-CHECK-SALDO": {
+        "name": "ALGO-CHECK-SALDO",
+        "Description": "Número de algoritmo de cálculo de chequeo de saldo",
+        "type": "X", 
+        "length": 2 ,
+        "dafault": "00"
+    },
+    "USER-FLD0": {
+        "name": "USER-FLD0",
+        "Description": "Reservado para uso futuro.",
+        "type": "X", 
+        "length": 1 ,
+        "dafault": " "
+    },
+    "CAP-FLAG": {
+        "name": "CAP-FLAG",
+        "Description": "Flag para decidir si ingresa o no en Proceso de Captura",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": [" ", "0", "1"],
+        "dafault": " "
+    },
+    "TIPO-FINANCIACION ": {
+        "name": "TIPO-FINANCIACION ",
+        "Description": "Tipo de financiación del comercio [ Payment Plan Type ( INAS ) ]",
+        "type": "X", 
+        "length": 2 ,
+        "validValues": ["  ", "20", "21", "22", "23", "24", "25", "26"],
+        "dafault": "  "
+    },
+    "IND-CONTING": {
+        "name": "IND-CONTING",
+        "Description": "Índice de contingencia.",
+        "type": "X", 
+        "length": 1 ,
+        "dafault": " "
+    },
+    "IMPACTA-SALDO": {
+        "name": "IMPACTA-SALDO",
+        "Description": "Indicador de Impacto on-line",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3"],
+        "dafault": "0"
+    },
+    "SITUACION-IVA-COMER": {
+        "name": "SITUACION-IVA-COMER",
+        "Description": "Situación IVA Comercio",
+        "type": "X", 
+        "length": 2 ,
+        "dafault": "  "
+    },
+    "RUBRO": {
+        "name": "RUBRO",
+        "Description": "Rubro",
+        "type": "X", 
+        "length": 5 ,
+        "dafault": "     "
+    },
+    "FIID-ACQ": {
+        "name": "FIID-ACQ",
+        "Description": "Entidad Adquirente",
+        "type": "X", 
+        "length": 4 ,
+        "dafault": "    "
+    },
+    "CNTRY-ISO": {
+        "name": "CNTRY-ISO",
+        "Description": "Código ISO del país de la terminal",
+        "type": "X", 
+        "length": 3 ,
+        "validValues": ["   ", "032", "858"],
+        "dafault": "   "
+    },
+    "ORIG-APPRV-CDE": {
+        "name": "ORIG-APPRV-CDE",
+        "Description": "Código de aprobación original enviado por Mastercard",
+        "type": "X", 
+        "length": 6 ,
+        "dafault": "      "
+    },
+    "PRE-AUTH-CHK-CVC2": {
+        "name": "PRE-AUTH-CHK-CVC2",
+        "Description": "Flag de verificacion de CVC2 para message type '0100' de pre-autorizaciones generadas en POS.",
+        "type": "X", 
+        "length": 1 ,
+        "dafault": " "
+    },
+    "FLAG-CUENTA-EMISOR": {
+        "name": "FLAG-CUENTA-EMISOR",
+        "Description": "Flag de envío de nro-cuenta al POS si el emisor está habilitado desde el IDF",
+        "type": "X", 
+        "length": 1 ,
+        "dafault": " "
+    },
+    "GRUPO-TERM": {
+        "name": "GRUPO-TERM",
+        "Description": "Grupo al que pertenece la terminal. Se obtiene del PTD.",
+        "type": "X", 
+        "length": 2 ,
+        "dafault": "  "
+    },
+    "ENTRY-MDE-BNET": {
+        "name": "ENTRY-MDE-BNET",
+        "Description": "Entry mode que se envía a Mastercard",
+        "type": "X", 
+        "length": 2 ,
+        "dafault": "  "
+    },
+    "LEY": {
+        "name": "LEY",
+        "Description": "Law number",
+        "type": "X", 
+        "length": 6 ,
+        "validValues": ["      ", " 17934", " 18083", " 18910", " 18999", " 19210"],
+        "dafault": "      "
+    },
+    "RUT": {
+        "name": "RUT",
+        "Description": "Merchant Taxpayer Identification Number",
+        "type": "X", 
+        "length": 12 ,
+        "dafault": "            "
+    },
+    "NRO-FACTURA-P4": {
+        "name": "NRO-FACTURA",
+        "Description": "",
+        "type": "9", 
+        "length": 12 ,
+        "dafault": "            "
+    },
+    "USR-FLD": {
+        "name": "USR-FLD",
+        "Description": "",
+        "type": "X", 
+        "length": 10 ,
+        "dafault": "          "
+    },
+    "MONTO-TRX": {
+        "name": "MONTO-TRX",
+        "Description": "Original transaction amount",
+        "type": "X", 
+        "length": 12,
+        "dafault": "            "
+    },
+    "MONTO-GRAVADO": {
+        "name": "MONTO-GRAVADO",
+        "Description": "Taxed transaction amount. It's the original transaction amount without the VAT.",
+        "type": "X", 
+        "length": 12,
+        "dafault": "            "
+    },
+    "MONTO-DEVL": {
+        "name": "MONTO-DEVL",
+        "Description": "Tax refund amount.",
+        "type": "X", 
+        "length": 12,
+        "dafault": "000000000000"
+    },
+    "APLICA-DEVOLUCION": {
+        "name": "APLICA-DEVOLUCION",
+        "Description": "Tax refund indicator B24 can change this value according to the law.",
+        "type": "X", 
+        "length": 1,
+        "validValues": [" ", "1", "2"],
+        "dafault": "2"
+    },
+    "PERIODO": {
+        "name": "PERIODO",
+        "Description": "Period reached by the refund.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": [" ", "1", "2", "3"],
+        "dafault": " "
+    },
+    "COTIZACION-UI": {
+        "name": "COTIZACION-UI",
+        "Description": "Indexed Unit Price",
+        "type": "X", 
+        "length": 12,
+        "dafault": "000000000000"
+    },
+    "COTIZACION-DOLAR": {
+        "name": "COTIZACION-DOLAR",
+        "Description": "US Dolar price",
+        "type": "X", 
+        "length": 12,
+        "dafault": "000000000000"
+    },
+    "PUNTOS-IVA": {
+        "name": "PUNTOS-IVA",
+        "Description": "VAT points to be refunded. Only used for 19210 law",
+        "type": "9", 
+        "length": 1,
+        "dafault": "0"
+    },
+    "IVA-DEVUELTO": {
+        "name": "IVA-DEVUELTO",
+        "Description": "VAT percentage to be refunded (%00,00) ID FRONTERA (IMESI).",
+        "type": "9", 
+        "length": 4,
+        "validValues": ["0000", "0500", "0600"],
+        "dafault": "0000"
+    },
+    "IMPORTE-FACTURA": {
+        "name": "IMPORTE-FACTURA",
+        "Description": "Amount of invoice/ticket/bill. It's mandatory for 19210 law.",
+        "type": "9", 
+        "length": 12,
+        "dafault": "000000000000"
+    },
+    "TIPO-TARJETA": {
+        "name": "TIPO-TARJETA",
+        "Description": "card-type",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["1", "2", "3"],
+        "dafault": "1"
+    },
+    "DESC-MONTO-EMV": {
+        "name": "DESC-MONTO-EMV",
+        "Description": "VAT discounted in the transaction amount when EMV entry",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["S", "N"],
+        "dafault": "N"
+    },
+    "INDI": {
+        "name": "INDI",
+        "Description": "Tax Refund Indicator (INDI):",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1", "2", "3", "4", "5", "6"],
+        "dafault": "0"
+    },
+    "APLICA-ON-LINE": {
+        "name": "APLICA-ON-LINE",
+        "Description": "Flag showing if refund discount was applied to the original transaction amount at transaction time.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["S", "N"],
+        "dafault": "N"
+    },
+    "ORIG-TARJETA": {
+        "name": "ORIG-TARJETA",
+        "Description": "It shows the card associated country.",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": [" ", "1", "2"],
+        "dafault": " "
+    },
+    "USR-FLD-PH": {
+        "name": "USR-FLD-PH",
+        "Description": "",
+        "type": "X", 
+        "length": 2 ,
+        "dafault": "  "
+    },
+    "EXT-RC-CDE": {
+        "name": "EXT-RC-CDE",
+        "Description": "External Response Code from Mastercard and Visa",
+        "type": "X", 
+        "length": 2,
+        "dafault": "  "
+    },
+    "EXT-RC-DESCR": {
+        "name": "EXT-RC-DESCR",
+        "Description": "External Response Code Description (Ver documento anexo “Apéndice”, sección “Tabla interna B24 de conversión”)",
+        "type": "X", 
+        "length": 20,
+        "dafault": "                    "
+    },
+    "MC-MAC": {
+        "name": "MC-MAC",
+        "Description": "Mastercard Merchant Advice Code (Ver documento anexo “Apéndice”, sección “Posibilidad de reintento -> Mastercard”)",
+        "type": "X", 
+        "length": 2,
+        "dafault": "  "
+    },
+    "VISA-RC-CAT": {
+        "name": "VISA-RC-CAT",
+        "Description": "Visa Response Code Category (Ver documento anexo “Apéndice”, sección “Posibilidad de reintento -> Visa”)",
+        "type": "X", 
+        "length": 1,
+        "validValues": [" ", "0", "1"],
+        "dafault": " "
+    },
+    "REQ-EXT-RC-CDE": {
+        "name": "REQ-EXT-RC-CDE",
+        "Description": "Flag to receive Response Code from brand",
+        "type": "X", 
+        "length": 1 ,
+        "validValues": ["0", "1"],
+        "dafault": "0"
+    },
+    "USER-FLD-PX": {
+        "name": "USER-FLD-PX",
+        "Description": "Future use",
+        "type": "X", 
+        "length": 4,
+        "dafault": "    "
+    },
     "Comment": {
         "name": "Comment",
         "Description": "",

@@ -1,0 +1,86 @@
+P0 – CSM-POS-TKN – Datos Propios POS
+
+ID:
+P0	Nombre:
+CSM-POS-TKN	Función:
+Datos Propios POS	Largo:
+38 bytes	Conexión:
+HOST/RED	Prod:
+POS
+
+Campo	Formato	Descripción
+
+----------------
+ALGO-IMPACTO-SALDO	X(2)	Número de algoritmo de cálculo de impacto de saldo
+Default: "00"
+
+----------------
+ALGO-CHECK-SALDO	X(2)	Número de algoritmo de cálculo de chequeo de saldo
+Default: "00"
+
+----------------
+CANT-CUOTAS                               	X(2)	Cantidad de cuotas
+
+----------------
+USER-FLD0                                 	X(1)	Reservado para uso futuro.
+Default: " "
+
+----------------
+CAP-FLAG                                  	X(1)	Flag para decidir si ingresa o no en Proceso de Captura
+Valores posibles: 
+"0" = No ingresa en Proceso de Captura
+"1" = Ingresa en Proceso de Captura
+
+----------------
+TIPO-FINANCIACION                         	X(2)	Tipo de financiación del comercio [ Payment Plan Type ( INAS ) ]
+Valores posibles:
+"20" - Issuer - financed ( Emisora )
+"21" - Merchant - financed
+"22" - Acquirer - financed
+“23" - Average payment ( Promedio )
+"24” - Consumer financing - Purchase ( Compra )
+"25" - Consumer financing - Cash Advance ( Adelanto )
+"26" - Government finance - Planes Ahora
+
+----------------
+IND-CONTING                               	X(1)	Índice de contingencia.
+Default: " "
+
+----------------
+IMPACTA-SALDO	X(1)	Indicador de Impacto on-line
+Default: " "
+Valores posibles: 
+"0" - Impacta siempre.
+"1" - No impacta on-line.
+"2" - No impacta off-line.
+"3" - No impacta nunca. 
+
+----------------
+SITUACION-IVA-COMER                       	X(2)	Situación IVA Comercio
+
+----------------
+RUBRO	X(5)	Rubro
+
+----------------
+FIID-ACQ                                  	X(4)	Entidad Adquirente
+
+----------------
+CNTRY-ISO                                 	X(3)	Código ISO del país de la terminal
+Valores posibles : 
+"032" - Argentina.
+"858" - Uruguay.
+
+----------------
+ORIG-APPRV-CDE                            	X(6)	Código de aprobación original enviado por Mastercard 
+
+----------------
+PRE-AUTH-CHK-CVC2                         	X(1)	Flag de verificacion de CVC2 para message type "0100" de pre-autorizaciones generadas en POS.
+
+----------------
+FLAG-CUENTA-EMISOR                        	X(1)	Flag de envío de nro-cuenta al POS si el emisor está habilitado desde el IDF
+
+----------------
+GRUPO-TERM                                	X(2)	Grupo al que pertenece la terminal. Se obtiene del PTD.
+
+----------------
+ENTRY-MDE-BNET	X(2)	Entry mode que se envía a Mastercard

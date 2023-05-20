@@ -114,7 +114,94 @@
                 "LIM-PREST-FINANCIA"
             ]
         }
+    },
+    "P0": {
+        "id": "CSM-POS-TKN",
+        "title": "Datos Propios POS",
+        "funcion": "Datos Propios POS",
+        "format": {
+            "count": 17,
+            "length": 38,
+            "fields": [
+                "ALGO-IMPACTO-SALDO",
+                "ALGO-CHECK-SALDO",
+                "CANT-CUOTAS",
+                "USER-FLD0",
+                "CAP-FLAG",
+                "TIPO-FINANCIACION",
+                "IND-CONTING",
+                "IMPACTA-SALDO",
+                "SITUACION-IVA-COMER",
+                "RUBRO",
+                "FIID-ACQ",
+                "CNTRY-ISO",
+                "ORIG-APPRV-CDE",
+                "PRE-AUTH-CHK-CVC2",
+                "FLAG-CUENTA-EMISOR",
+                "GRUPO-TERM",
+                "ENTRY-MDE-BNET"
+            ]
+        }
+    },
+    "P4": {
+        "id": "CSM-POS-TKN",
+        "title": "Datos Propios POS",
+        "funcion": "Datos Propios POS",
+        "format": {
+            "count": 4,
+            "length": 40,
+            "fields": [
+                "LEY",
+                "RUT",
+                "NRO-FACTURA-P4",
+                "USR-FLD"
+            ]
+        }
+    },
+    "PH": {
+        "id": "CSM-DEVL-IVA-TKN",
+        "title": "Devolucion de IVA Token",
+        "funcion": "Identifica que es una Operación con Devolucion de IVA en Terminales de Uruguay.",
+        "format": {
+            "count": 16,
+            "length": 92,
+            "fields": [
+                "MONTO-TRX",
+                "MONTO-GRAVADO",
+                "MONTO-DEVL",
+                "APLICA-DEVOLUCION",
+                "PERIODO",
+                "LEY",
+                "COTIZACION-UI",
+                "COTIZACION-DOLAR",
+                "PUNTOS-IVA",
+                "IVA-DEVUELTO",
+                "IMPORTE-FACTURA",
+                "TIPO-TARJETA",
+                "DESC-MONTO-EMV",
+                "INDI",
+                "APLICA-ON-LINE",
+                "ORIG-TARJETA",
+                "USR-FLD-PH"
+            ]
+        }
+    },
+    "PX": {
+        "id": "CSM-EXT-RESP-CDE-TKN",
+        "title": "Issuer Response Code",
+        "funcion": "Issuer Response Code",
+        "format": {
+            "count": 6,
+            "length": 30,
+            "fields": [
+                "EXT-RC-CDE",
+                "EXT-RC-DESCR",
+                "MC-MAC",
+                "VISA-RC-CAT",
+                "REQ-EXT-RC-CDE",
+                "USER-FLD-PX"
+            ]
+        }
     }
 }
-
 

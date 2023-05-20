@@ -1,0 +1,146 @@
+PH – CSM-DEVL-IVA-TKN- Devolucion de IVA Token
+
+ID:
+PH	Nombre:
+CSM-DEVL-IVA-TKN	Función:
+Identifica que es una Operación con Devolucion de IVA en
+Terminales de Uruguay.	Largo:
+92 bytes	Conexión:
+HOST	Prod:
+POS
+
+Campo	Formato	Descripción
+
+----------------------
+MONTO-TRX
+(trx-amount)	X(12)	Original transaction amount.
+
+----------------------
+MONTO-GRAVADO
+(taxed-amount)	X(12)	Taxed transaction amount. It's the original transaction amount without the VAT.
+
+----------------------
+MONTO-DEVL
+(refund-amount)	X(12)	Tax refund amount.
+Default: "000000000000"
+
+----------------------
+APLICA-DEVOLUCION 
+(apply-refund)	X(01)	Tax refund indicator B24 can change this value according to the law.
+
+Default: "2"
+Valid values:
+"1" - Applied
+"2" - Not applied
+
+----------------------
+PERIODO
+(period)	X(01)	Period reached by the refund.
+
+Default: " "
+Valid values:
+"0" - 1st year
+"1" - 2nd year
+"2" - 3rd year
+
+----------------------
+LEY
+(law)	X(06)	Law number
+
+Default: "      "
+Valid values:
+"      " - No tax refund (INDI 0)
+" 17934" - VAT (INDI 1)
+" 18083" - IMESI (INDI 2)
+" 18910" - AFAM (INDI 3)
+" 18999" - TAX (INDI 4)
+" 19210" - VAT (INDI 6)
+
+----------------------
+COTIZACION-UI
+(iu-price)                    	X(12)	Indexed Unit Price
+Default: "000000000000"
+
+----------------------
+COTIZACION-DOLAR
+(dolar-price)                       	X(12)	US Dolar price
+Default: "000000000000"
+
+----------------------
+PUNTOS-IVA
+(vat-points)	9(01)	VAT points to be refunded. Only used for "19210" law
+Default: "0"
+
+------
+IVA-DEVUELTO / 
+ID FRONTERA (IMESI)
+(refunded-vat / border-id (imesi))	9(04)	VAT percentage to be refunded (%00,00) ID FRONTERA (IMESI).
+
+Default: "0000"
+For "18083" law: 
+This field is redefined for identifying the border.
+Valid values:
+"0500" - Law 18.083 ARG
+"0600" = Law 18.083 BRA
+
+----------------------
+IMPORTE-FACTURA
+(invoice-amount)	9(12)	Amount of invoice/ticket/bill. It's mandatory for "19210" law.
+Default: "000000000000"
+
+----------------------
+TIPO-TARJETA
+(card-type)	X(01)	Valid values:
+"1" - Credit
+"2" - Debit
+"3" - Prepaid
+
+----------------------
+DESC-MONTO-EMV
+(emv-amount-disc)	X(01)	Default: "N"
+Valid values:
+"S" - VAT discounted in the transaction amount when EMV entry. 
+"N" - No VAT discounted.
+
+----------------------
+INDI	X(01)	Tax Refund Indicator (INDI):
+
+Valid values:
+"0" - No Tax Refund
+"1" - Returns VAT (Law 17934)
+"2" - Returns IMESI (Law 18083)
+"3" - Returns AFAM (Law 18910)
+"4" - Tax Refund (Law 18999) 
+"5" - Future use
+"6" - Returns VAT (Law 19210) 
+
+It's the first byte of the invoice/number that is filled only with new POS version.
+
+For "19210" law: 
+If token "R2" field "Plan" is "7", "8" or "9", it is the previous POS version.
+
+----------------------
+APLICA-ON-LINE
+(applied-on-line)	X(01)	Flag showing if refund discount was applied to the original transaction amount at transaction time.
+
+Default: "N"
+Valid values:
+"S" - Applied
+"N" - Not applied
+
+This field will always have an "N" if the law discount was not applied on-line.
+It is not related with “DESC-MONTO-ENV (emv-amount-disc)" field. 
+
+----------------------
+ORIG-TARJETA / REGION
+(card-origin / region)	9(01)	It shows the card associated country.
+
+Default: " "
+Valid values:
+"1" - National (Uruguay)
+"2" - International (Other)
+
+----------------------
+USR-FLD                                    	X(02)	Reserved for future use.
+Default: "  "
+ 

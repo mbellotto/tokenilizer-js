@@ -1,0 +1,44 @@
+P4 – CSM-DEVL2-TKN – Devolucion de impuestos Token
+  
+ID:
+P4	Nombre:
+CSM-DEVL2-TKN	Función:
+Devolución de impuestos en terminales de Uruguay	Largo:
+40 bytes	Conexión:
+HOST	Prod:
+POS
+
+Campo	Formato	Descripción
+
+LEY (law)	X(06)	Law number
+
+Default: "      "
+Valid values:
+"      " - No tax refund (INDI 0)
+" 17934" - VAT (INDI 1)
+" 18083" - IMESI (INDI 2)
+" 18910" - AFAM (INDI 3)
+" 18999" - TAX (INDI 4)
+" 19210" - VAT (INDI 6)
+
+RUT (TIN)	X(12)	Merchant Taxpayer Identification Number
+Default: "            "
+
+NRO-FACTURA (invoice-number)	X(12)	Ticket number keyed in the POS terminal.
+Only last 9 digits must be considered.
+
+The structure of this field is as follows:
+- Subfield 1 - Law Indicator (INDI) - 1 digit 
+- Subfield 2 - Brand indicator (Marcas) - 2 digits - default "00"
+- Subfield 3 - Invoice / bill / ticket number (Número de factura) - 9 digits
+
+Check the image below for more details:
+INDI X(1) -> "0", "1", "2", "3", "4", "5", "6"
+Marcas X(2) -> default "00"
+Numero de factura 9(9) -> se debe completar con 0 a la izquierda
+ 
+
+USR-FLD (user field)	X(10)	Reserved for future use.
+Default: "          "
+
+ 

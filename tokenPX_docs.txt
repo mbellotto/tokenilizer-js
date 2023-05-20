@@ -1,0 +1,31 @@
+PX – CSM-EXT-RESP-CDE-TKN – Issuer Response Code
+
+ID:
+PX	Nombre:
+CSM-EXT-RESP-CDE-TKN	Función:
+Issuer Response Code	Largo:
+30 bytes 	Conexión:
+HOST	Prod:
+POS
+
+Campo	Formato	Descripción
+
+-----------
+EXT-RC-CDE	X(02)	External Response Code from Mastercard and Visa
+
+-----------
+EXT-RC-DESCR	X(20)	External Response Code Description (Ver documento anexo “Apéndice”, sección “Tabla interna B24 de conversión”)
+
+-----------
+MC-MAC	X(02)	Mastercard Merchant Advice Code (Ver documento anexo “Apéndice”, sección “Posibilidad de reintento -> Mastercard”)
+
+-----------
+VISA-RC-CAT	X(01)	Visa Response Code Category (Ver documento anexo “Apéndice”, sección “Posibilidad de reintento -> Visa”)
+
+-----------
+REQ-EXT-RC-CDE	X(01)	Flag to receive Response Code from brand
+“0” - No
+“1” - Yes
+
+-----------
+USER-FLD	X(04)	Future use
