@@ -1,0 +1,10 @@
+Transacción	                                    Código ISO	    Tokens
+---------------------------------------------  -------------   ------------------------------------------
+Normal purchase	                                    00        	04 – C0 – C4 - R2 – P3 – Q2 – B0
+Preauthorization purchase*	                        00        	04 – C0 – C4 - R2 – P3 – Q2 – B0
+Preauthorization purchase Completion	            00        	04 – C0 – C4 - R2 – P3 – Q2 – B0
+Compra con Propina	                                00        	04 – C0 – C4 - R2 – P3 – Q2
+Account Status Inquiry	                            00        	04 – C0 – C4 - R2 – P3 – Q2 – B0 - BM
+Purchase adjustment	                                02        	04 – C0 – C4 - R2 – P3 - Q2 – B0
+Merchandise return	                                20        	04 – C0 – C4 - R2 – P3 – Q2 – B0
+Merchandise return Adjustment	                    22        	04 – C0 – C4 - R2 – P3 – Q2 – B0

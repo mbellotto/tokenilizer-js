@@ -202,6 +202,21 @@
                 "USER-FLD-PX"
             ]
         }
+    },
+    "BM": {
+        "id": "TXN-SUBTYP-TKN",
+        "title": "Subtipo de la Transacción(OK)",
+        "funcion": "Subtipo de la Transacción",
+        "format": {
+            "count": 4,
+            "length": 36,
+            "fields": [
+                "TXN-SUBTYP",
+                "ACQ-PROC-CD",
+                "ISS-PROC-CD",
+                "USER-FLD1"
+            ]
+        }
     }
 }
 

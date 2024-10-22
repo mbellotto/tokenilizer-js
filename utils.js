@@ -1,6 +1,11 @@
 import format from "./token.definition.json" assert { type: "json" };
 import fieldsDef from "./field.definition.json" assert { type: "json" };
 
+import chalk from 'chalk';
+
+const OK  = chalk.green('\u2713');
+const NOK = chalk.red('X');
+
 export function findField( fieldId ) {
     return fieldsDef[ fieldId ];
 }
@@ -28,7 +33,16 @@ export function parseTokenData (def, value) {
             idx = fld.validValues.indexOf(fieldValue);
         }
 
-        console.log(`   ${fld.name} = [${fieldValue}]  [ ${idx === -1 ? 'INAVLID' : 'VALID'} ]`);
+        const evalStatus = `${idx === -1 ? NOK : OK}`;
+        const fieldEval  = `${fld.name} = [${fieldValue}]`.padEnd(50,' ');
+        const evalMsg    = `[ ${idx === -1 ? 'INVALID' : 'VALID'} ]`;
+        const typeMsg    = `${fld.type}(${fld.length})`.padEnd(6,' ');
+        
+        const values     = ( fld.validValues?.length ) ? fld.validValues.join(', ') : 'N/A';
+        const explain    = `type=[${typeMsg}]  default=[${fld.default||'N/A'}]  values=[${values}]`;
+
+        // console.log(`   ${fld.name} = [${fieldValue}]  [ ${idx === -1 ? 'INVALID' : 'VALID'} ]`);
+        console.log(`${evalStatus}  ${fieldEval}  ${evalMsg}  ${idx === -1 ? explain : ''}`);
 
         if ( idx === -1 ) {
             observed.push(fld.name);
@@ -85,8 +99,8 @@ export function evalTokenStructure( token ) {
         }
         
         const observed = parseTokenData( def, value );
-        console.log('------------------------------------------------------------------------------\n');
-        console.log(`Observed fields: ${observed.join(', ')}`);
+        console.log('------------------------------------------------------------------------------');
+        console.log(`Observed fields:\n   ${observed.join(', ')}`);
         console.log('------------------------------------------------------------------------------\n');
 
     } else {

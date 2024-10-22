@@ -717,11 +717,39 @@
         "length": 4,
         "dafault": "    "
     },
+    "TXN-SUBTYP": {
+        "name": "TXN-SUBTYP",
+        "Description": "Identificador de Subtipo. Account Status Inquiry: 'C009'",
+        "type": "X", 
+        "length": 4,
+        "dafault": "C009"
+    },
+    "ACQ-PROC-CDE": {
+        "name": "ACQ-PROC-CDE",
+        "Description": "Código de Proceso Adquirente Externo",
+        "type": "X", 
+        "length": 6,
+        "dafault": "      "
+    },
+    "ISS-PROC-CDE": {
+        "name": "ISS-PROC-CDE",
+        "Description": "Código de Proceso Emisor Externo",
+        "type": "X", 
+        "length": 6,
+        "dafault": "      "
+    },
+    "USER-FLD1": {
+        "name": "USER-FLD1",
+        "Description": "",
+        "type": "X", 
+        "length": 20,
+        "dafault": "                    "
+    },
     "Comment": {
         "name": "Comment",
         "Description": "",
         "type": "X", 
-        "length": 1 ,
+        "length": 1,
         "validValues": ["0", "1"],
         "dafault": "0"
     }

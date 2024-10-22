@@ -1,0 +1,15 @@
+BM – TXN-SUBTYP-TKN -  Subtipo de la Transacción(OK)
+  
+ID:
+BM    Nombre:
+TXN-SUBTYP-TKN    Función:
+Subtipo de la Transacción    Largo:
+36 bytes    Conexión:
+HOST/RED    Prod:
+BASE
+
+Campo              Formato   Descripción
+TXN-SUBTYP          X(04)    Identificador de Subtipo. Account Status Inquiry: “C009”
+ACQ-PROC-CDE        X(06)    Código de Proceso Adquirente Externo
+ISS-PROC-CDE        X(06)    Código de Proceso Emisor Externo
+USER-FLD1           X(20)    
